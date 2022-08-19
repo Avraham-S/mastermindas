@@ -1,0 +1,168 @@
+body {
+  display: grid;
+  place-items: center;
+}
+
+#game-container {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5px;
+}
+
+.color-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.rows-container {
+  height: 500px;
+  width: 250px;
+  border: 5px;
+  border-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-row {
+  display: flex;
+  flex-direction: row;
+  border: 5px solid black;
+  border-color: black;
+  /* margin-top: 5px; */
+  /* margin-bottom: 5px; */
+  align-content: space-between;
+
+  /* gap: 10px; */
+  height: 50px;
+  /* height: 50px; */
+}
+
+.game-box {
+  border: 3px solid grey;
+  width: 50px;
+}
+
+.box-selected {
+  border-color: rgb(85, 255, 0);
+}
+
+.current-row {
+  border-color: red;
+}
+
+/* button {
+    background-color: aqua;
+  } */
+
+.round-score {
+  display: grid;
+  grid-template-columns: 23px 23px;
+  grid-template-rows: 23px 23px;
+  width: 50px;
+  gap: 3px;
+}
+
+.score-circle {
+  background-color: rgb(255, 255, 255);
+  /* width: 25%; */
+  /* height: 25%; */
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 50%;
+}
+
+.guess-correct {
+  background-color: green;
+}
+
+.guess-incorrect {
+  background-color: rgb(186, 186, 59);
+}
+
+.color-button {
+  margin-top: 15px;
+  height: 20px;
+  width: 20px;
+}
+
+.button-submit {
+  /* height: 100%; */
+  width: min-content;
+  background-color: gray;
+  overflow: wrap;
+}
+
+.button-green {
+  margin-left: 50%;
+  background-color: green;
+}
+.button-blue {
+  margin-left: 50%;
+
+  background-color: blue;
+}
+.button-yellow {
+  margin-left: 50%;
+  background-color: yellow;
+}
+.button-red {
+  margin-left: 50%;
+  background-color: red;
+}
+.button-orange {
+  margin-left: 50%;
+  background-color: orange;
+}
+.button-pink {
+  margin-left: 50%;
+  margin-bottom: 10px;
+  background-color: pink;
+}
+
+.modal {
+  /* display: none; */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  gap: 5px;
+  height: fit-content;
+  width: fit-content;
+  /* width: 50%;
+    height: 25%; */
+}
+
+.game-result-message {
+  width: 70%;
+  font-size: 50px;
+  text-align: center;
+  margin: 15% 15% 10% 15%;
+}
+
+.hidden {
+  display: none;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-solution {
+  width: fit-content;
+}
