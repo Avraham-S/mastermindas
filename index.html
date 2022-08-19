@@ -9,7 +9,9 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <h1>Mastermind</h1>
+    <div class="header">
+        <h1>Mastermind</h1>
+    </div>
     <div id="game-container">
       <div class="rows-container">
         <!-- <div class="game-row current-row row-1">
@@ -42,6 +44,8 @@
           <button class="button-submit">SUBMIT GUESS</button>
           <br />
           <button id="new-game-button">NEW GAME</button>
+          <br>
+          <div class="help-button"><button>INFO</button></div>
         </div>
       </div>
     </div>
@@ -60,6 +64,21 @@
         <p>Start a new game?</p>
         <button class="button-yes">yes</button>
         <button class="button-no">no</button>
+      </div>
+    </div>
+    <div id="info-modal" class="modal hidden">
+      <div class="modal-content ">
+        <button class="close-info-modal-button">X</button>
+        <h2>HOW TO PLAY</h2>
+        <p>GUESS THE CORRECT PATTERN OF COLORS</p>
+        <p class="inline">
+            <div class="score-circle guess-correct info-circle"></div>
+          -Correct color and correct place
+        </p>
+        <p class="inline">
+            <div class="score-circle guess-incorrect info-circle"></div>
+          -Correct color but wrong place
+        </p>
       </div>
     </div>
   </body>

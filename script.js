@@ -11,12 +11,15 @@ const newGameModal = document.querySelector(".new-game-modal");
 const yesBtn = document.querySelector(".button-yes");
 const noBtn = document.querySelector(".button-no");
 
+const infoModal = document.getElementById("info-modal");
+const helpBtn = document.querySelector(".help-button");
+const closeInfoBtn = document.querySelector(".close-info-modal-button");
+
 const rowsContainer = document.querySelector(".rows-container");
 const colorContainer = document.querySelector(".color-options");
 const gameRows = Array.from(document.querySelectorAll(".game-row"));
 const submitBtn = document.querySelector(".button-submit");
 const newGamebtn = document.getElementById("new-game-button");
-console.log(newGamebtn);
 
 const init = function () {
   newGameModal.classList.add("hidden");
@@ -271,6 +274,13 @@ newGamebtn.addEventListener("click", function () {
 });
 closeModalBtn.addEventListener("click", function () {
   gameOverModal.classList.add("hidden");
+});
+
+helpBtn.addEventListener("click", function () {
+  infoModal.classList.remove("hidden");
+});
+closeInfoBtn.addEventListener("click", function () {
+  infoModal.classList.add("hidden");
 });
 
 init();

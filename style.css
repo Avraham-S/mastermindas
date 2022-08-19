@@ -3,6 +3,11 @@ body {
   place-items: center;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
 #game-container {
   display: flex;
   flex-direction: row-reverse;
@@ -70,6 +75,18 @@ body {
   border-style: solid;
   border-color: black;
   border-radius: 50%;
+}
+
+.info-circle {
+  width: 20px;
+  height: 20px;
+}
+.inline {
+  display: inline;
+}
+.close-info-modal-button {
+  justify-content: center;
+  width: 20px;
 }
 
 .guess-correct {
