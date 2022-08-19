@@ -33,7 +33,7 @@ const init = function () {
   // solution = ["yellow", "blue", "red", "red"];
   assignBoxes();
   if (!gameOverModal.classList.contains("hidden"))
-    modal.classList.add("hidden");
+    gameOverModal.classList.add("hidden");
   renderAnswer();
   console.log("solution:", solution);
 };
