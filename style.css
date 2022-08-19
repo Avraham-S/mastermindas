@@ -166,3 +166,7 @@ body {
 .game-solution {
   width: fit-content;
 }
+
+.close-modal-button {
+  width: 20px;
+}

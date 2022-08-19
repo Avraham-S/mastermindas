@@ -1,17 +1,26 @@
 "use strict";
 
-const modal = document.querySelector(".modal");
+const gameOverModal = document.getElementById("game-over-modal");
 const modalContent = document.querySelector(".modal-content");
 const modalMessage = document.querySelector(".game-result-message");
-const newGameBtn = document.querySelector(".new-game-button");
+const newGameBtnModal = document.querySelector(".new-game-button-modal");
 const rowSolution = document.querySelector(".row-solution");
+const closeModalBtn = document.querySelector(".close-modal-button");
+
+const newGameModal = document.querySelector(".new-game-modal");
+const yesBtn = document.querySelector(".button-yes");
+const noBtn = document.querySelector(".button-no");
 
 const rowsContainer = document.querySelector(".rows-container");
 const colorContainer = document.querySelector(".color-options");
 const gameRows = Array.from(document.querySelectorAll(".game-row"));
 const submitBtn = document.querySelector(".button-submit");
+const newGamebtn = document.getElementById("new-game-button");
+console.log(newGamebtn);
 
 const init = function () {
+  newGameModal.classList.add("hidden");
+
   solution = [];
   renderGame();
   rowNum = 1;
@@ -20,7 +29,8 @@ const init = function () {
   generateSolution();
   // solution = ["yellow", "blue", "red", "red"];
   assignBoxes();
-  if (!modal.classList.contains("hidden")) modal.classList.add("hidden");
+  if (!gameOverModal.classList.contains("hidden"))
+    modal.classList.add("hidden");
   renderAnswer();
   console.log("solution:", solution);
 };
@@ -186,7 +196,7 @@ const getscore = function (guess) {
 const checkWin = function (score) {
   const win = score.every((s) => s === 2);
   if (win) {
-    modal.classList.remove("hidden");
+    gameOverModal.classList.remove("hidden");
     modalMessage.textContent = "YOU WIN! 😁";
     modalMessage.style.color = "green";
     // console.log(" You win");
@@ -196,7 +206,7 @@ const checkWin = function (score) {
 
 const checkLose = function () {
   if (rowNum > 10) {
-    modal.classList.remove("hidden");
+    gameOverModal.classList.remove("hidden");
     modalMessage.textContent = "YOU LOSE! 😢";
     modalMessage.style.color = "red";
   }
@@ -251,7 +261,17 @@ submitBtn.addEventListener("click", function () {
   checkLose();
 });
 
-newGameBtn.addEventListener("click", init);
+newGameBtnModal.addEventListener("click", init);
+yesBtn.addEventListener("click", init);
+noBtn.addEventListener("click", function () {
+  newGameModal.classList.add("hidden");
+});
+newGamebtn.addEventListener("click", function () {
+  newGameModal.classList.remove("hidden");
+});
+closeModalBtn.addEventListener("click", function () {
+  gameOverModal.classList.add("hidden");
+});
 
 init();
 // to do: check winner, new game button,

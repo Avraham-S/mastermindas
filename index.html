@@ -23,72 +23,6 @@
           <div class="score-circle"></div>
           <div class="score-circle"></div>
           <div class="score-circle"></div> -->
-
-        <!-- </div>
-        </div>
-        <div class="game-row row-2">
-          <div data-color="" class="game-box box-1"></div>
-          <div data-color="" class="game-box box-2"></div>
-          <div data-color="" class="game-box box-3"></div>
-          <div data-color="" class="game-box box-4"></div>
-          <div class="round-score"></div>
-        </div>
-        <div class="game-row row-3">
-          <div data-color="" class="game-box box-1"></div>
-          <div data-color="" class="game-box box-2"></div>
-          <div data-color="" class="game-box box-3"></div>
-          <div data-color="" class="game-box box-4"></div>
-          <div class="round-score"></div>
-        </div>
-        <div class="game-row row-4">
-          <div data-color="" class="game-box box-1"></div>
-          <div data-color="" class="game-box box-2"></div>
-          <div data-color="" class="game-box box-3"></div>
-          <div data-color="" class="game-box box-4"></div>
-          <div class="round-score"></div>
-        </div>
-        <div class="game-row row-5">
-          <div data-color="" class="game-box box-1"></div>
-          <div data-color="" class="game-box box-2"></div>
-          <div data-color="" class="game-box box-3"></div>
-          <div data-color="" class="game-box box-4"></div>
-          <div class="round-score"></div>
-        </div>
-        <div class="game-row row-6">
-          <div data-color="" class="game-box box-1"></div>
-          <div data-color="" class="game-box box-2"></div>
-          <div data-color="" class="game-box box-3"></div>
-          <div data-color="" class="game-box box-4"></div>
-          <div class="round-score"></div>
-        </div>
-        <div class="game-row row-7">
-          <div data-color="" class="game-box box-1"></div>
-          <div data-color="" class="game-box box-2"></div>
-          <div data-color="" class="game-box box-3"></div>
-          <div data-color="" class="game-box box-4"></div>
-          <div class="round-score"></div>
-        </div>
-        <div class="game-row row-8">
-          <div data-color="" class="game-box box-1"></div>
-          <div data-color="" class="game-box box-2"></div>
-          <div data-color="" class="game-box box-3"></div>
-          <div data-color="" class="game-box box-4"></div>
-          <div class="round-score"></div>
-        </div>
-        <div class="game-row row-9">
-          <div data-color="" class="game-box box-1"></div>
-          <div data-color="" class="game-box box-2"></div>
-          <div data-color="" class="game-box box-3"></div>
-          <div data-color="" class="game-box box-4"></div>
-          <div class="round-score"></div>
-        </div>
-        <div class="game-row row-10">
-          <div data-color="" class="game-box box-1"></div>
-          <div data-color="" class="game-box box-2"></div>
-          <div data-color="" class="game-box box-3"></div>
-          <div data-color="" class="game-box box-4"></div>
-          <div class="round-score"></div>
-        </div> -->
       </div>
       <div class="buttons-container">
         <div class="color-options">
@@ -107,16 +41,25 @@
 
           <button class="button-submit">SUBMIT GUESS</button>
           <br />
+          <button id="new-game-button">NEW GAME</button>
         </div>
       </div>
     </div>
-    <div id="myModal" class="modal hidden">
+    <div id="game-over-modal" class="modal hidden">
       <!-- <div id="myModal" class="modal"> -->
       <!-- Modal content -->
       <div class="modal-content">
+        <button class="close-modal-button">X</button>
         <p class="game-result-message">RESULT</p>
         <div class="game-row row-solution"></div>
-        <button class="new-game-button">NEW GAME</button>
+        <button class="new-game-button-modal">NEW GAME</button>
+      </div>
+    </div>
+    <div class="new-game-modal modal">
+      <div class="modal-content">
+        <p>Start a new game?</p>
+        <button class="button-yes">yes</button>
+        <button class="button-no">no</button>
       </div>
     </div>
   </body>
