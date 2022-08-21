@@ -23,7 +23,7 @@ const newGamebtn = document.getElementById("new-game-button");
 
 const init = function () {
   newGameModal.classList.add("hidden");
-
+  win = false;
   solution = [];
   renderGame();
   rowNum = 1;
@@ -80,7 +80,8 @@ let box1,
   box4,
   roundScore,
   guess,
-  solution = [];
+  solution = [],
+  win = false;
 
 const generateSolution = function () {
   const colors = ["blue", "yellow", "red", "green", "orange", "pink"];
@@ -109,6 +110,7 @@ const assignBoxes = function () {
 };
 
 rowsContainer.addEventListener("click", function (e) {
+  if (win) return;
   if (!currentRow.contains(e.target)) return;
 
   const box = e.target.closest(".game-box");
@@ -121,6 +123,7 @@ rowsContainer.addEventListener("click", function (e) {
 });
 
 colorContainer.addEventListener("click", function (e) {
+  if (win) return;
   const colorBtn = e.target.closest(".color-button");
   if (!colorBtn) return;
 
@@ -162,7 +165,7 @@ const getscore = function (guess) {
     pink: 0,
   };
 
-  const s = guess
+  return guess
     .map((color, i) => {
       if (!solution.includes(color)) return null;
 
@@ -192,19 +195,18 @@ const getscore = function (guess) {
       }
       return score;
     });
-
-  return s;
 };
 
 const checkWin = function (score) {
-  const win = score.every((s) => s === 2);
-  if (win) {
+  const gameWin = score.every((s) => s === 2);
+  if (gameWin) {
     gameOverModal.classList.remove("hidden");
     modalMessage.textContent = "YOU WIN! 😁";
     modalMessage.style.color = "green";
     // console.log(" You win");
   }
-  return win;
+  win = true;
+  return gameWin;
 };
 
 const checkLose = function () {
@@ -255,11 +257,11 @@ submitBtn.addEventListener("click", function () {
   const score = getscore(guess);
   console.log(score);
 
+  renderScore(score);
   if (checkWin(score)) return;
 
   if (!guess || guess.some((g) => !g)) return;
 
-  renderScore(score);
   updateRow();
   checkLose();
 });
