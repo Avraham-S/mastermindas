@@ -204,8 +204,8 @@ const checkWin = function (score) {
     modalMessage.textContent = "YOU WIN! 😁";
     modalMessage.style.color = "green";
     // console.log(" You win");
+    win = true;
   }
-  win = true;
   return gameWin;
 };
 
